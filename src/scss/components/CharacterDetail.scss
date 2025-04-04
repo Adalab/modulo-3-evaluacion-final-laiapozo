@@ -6,7 +6,7 @@
   &__arrow {
     padding: 5px 6px;
     margin: 10px;
-    background-color: #4cb5c3;
+    background-color: #02adca;
     color: white;
     border-radius: 15px;
 
@@ -16,14 +16,16 @@
   }
 
   &__card {
-    background-color: #4cb5c3;
+    background-color: #02adca;
     color: white;
-    padding: 30px;
+    padding: 32px;
+    border-radius: 92px;
     display: flex;
     gap: 30px;
     align-items: center;
 
     &__img {
+      border-radius: 64px;
       height: 300px;
     }
 
@@ -31,6 +33,14 @@
       line-height: 50px;
     }
   }
+}
+
+.info {
+  font-weight: bold;
+}
+
+.icon {
+  color: #84d32c;
 }
 
 @media (max-width: 700px) {

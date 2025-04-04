@@ -1,6 +1,6 @@
 # Evaluación final - Módulo 3: React
 
-Este proyecto es el resultado de la evaluación final del Módulo 3 del bootcamp de programación web. Se trata de una aplicación web que muestra un listado de personajes de la serie *Rick and Morty*, permitiendo filtrarlos por nombre, especie y estado, además de acceder a su información detallada.
+Este proyecto es el resultado de la evaluación final del Módulo 3 del bootcamp de programación web. Se trata de una aplicación web que muestra un listado de personajes de la serie *Rick and Morty*. La app permite filtrar y acceder a información detallada de cada personaje.
 
 Puedes verlo aquí: [Rick and Morty App](http://beta.adalab.es/modulo-3-evaluacion-final-laiapozo/)
 

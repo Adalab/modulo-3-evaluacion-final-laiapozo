@@ -2,11 +2,12 @@ import { Route, Routes, Link, useLocation, matchPath } from "react-router-dom";
 import { useEffect, useState } from "react";
 import callToApi from "../services/api";
 import ls from "../services/localStorage";
-import logo from "../images/rick-and-morty-logo.webp";
+import logo from "../images/rick-and-morty-logo.png";
 import "../scss/App.scss";
 import CharactersList from "./CharactersList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
+import PageNotFound from "./PageNotFound";
 
 function App() {
   const [charactersData, setCharactersData] = useState([]);
@@ -64,8 +65,15 @@ function App() {
           />
           <Route
             path="/detail/:id"
-            element={<CharacterDetail character={characterSelected} />}
+            element={
+              characterSelected === undefined ? (
+                <PageNotFound />
+              ) : (
+                <CharacterDetail character={characterSelected} />
+              )
+            }
           />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </main>
     </>

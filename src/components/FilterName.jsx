@@ -7,6 +7,7 @@ const FilterName = ({ handleNameChange, name }) => {
       <input
         className="nameFilter"
         type="text"
+        id="name"
         value={name}
         placeholder="Search..."
         onChange={(ev) => {

@@ -1,13 +1,14 @@
 @use "core/reset";
 
 .header {
-  padding: 10px;
-  text-align: center;
   background-color: #ebe480;
   min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   img {
-    height: 150px;
+    height: 100px;
   }
 }
 
