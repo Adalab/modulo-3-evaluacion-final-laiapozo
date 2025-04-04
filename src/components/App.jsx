@@ -8,6 +8,7 @@ import Filters from "./Filters";
 
 function App() {
   const [charactersData, setCharactersData] = useState([]);
+  const [nameInput, setNameInput] = useState("");
 
   useEffect(() => {
     callToApi().then((response) => {
@@ -15,14 +16,26 @@ function App() {
     });
   }, []);
 
+  const handleNameChange = (value) => {
+    setNameInput(value);
+  };
+
+  const filteredCharacters = charactersData.filter((character) => {
+    return character.name.toLowerCase().includes(nameInput.toLowerCase());
+  });
+
   return (
     <>
       <header>
         <img src={logo} alt="Logo de Rick and Morty" />
       </header>
       <main>
-        <Filters />
-        <CharactersList characters={charactersData} />
+        <Filters handleNameChange={handleNameChange} />
+        {filteredCharacters.length === 0 ? (
+          `No hay ningún personaje que coincida con la palabra ${nameInput}`
+        ) : (
+          <CharactersList characters={filteredCharacters} />
+        )}
       </main>
     </>
   );

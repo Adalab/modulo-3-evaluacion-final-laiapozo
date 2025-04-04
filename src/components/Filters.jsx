@@ -1,9 +1,9 @@
 import FilterName from "./FilterName";
 
-const Filters = () => {
+const Filters = ({ handleNameChange }) => {
   return (
     <form>
-      <FilterName />
+      <FilterName handleNameChange={handleNameChange} />
     </form>
   );
 };

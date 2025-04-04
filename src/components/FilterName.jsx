@@ -1,8 +1,15 @@
-const FilterName = () => {
+const FilterName = ({ handleNameChange }) => {
   return (
     <>
       <label htmlFor="name"></label>
-      <input type="text" id="name" />
+      <input
+        type="text"
+        id="name"
+        placeholder="Buscar..."
+        onChange={(ev) => {
+          handleNameChange(ev.target.value);
+        }}
+      />
     </>
   );
 };
