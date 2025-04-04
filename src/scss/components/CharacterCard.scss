@@ -1,0 +1,12 @@
+.character {
+  background-color: #4cb5c3;
+  color: white;
+
+  &__img {
+    width: 250px;
+  }
+
+  &__text {
+    padding: 5px 10px;
+  }
+}

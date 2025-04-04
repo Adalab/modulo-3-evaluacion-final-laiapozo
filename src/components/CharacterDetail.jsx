@@ -1,21 +1,24 @@
 import { Link } from "react-router-dom";
+import "../scss/components/CharacterDetail.scss";
 
 const CharacterDetail = ({ character }) => {
-    return (
-        <>
-        <Link to="/"><i className="fa-solid fa-arrow-left"></i></Link>
-        <section>
-            <div>
-                <img src={character.photo} alt={`Image of ${character.photo}`} />
-            </div>
-            <h4>{character.name}</h4>
-            <p>Species: {character.species}</p>
-            <p>Origin: {character.origin}</p>
-            <p>Number of episodes: {character.episodes}</p>
-            <p>Status: {character.status}</p>
-        </section>
-        </>
-    );
+  return (
+    <section className="detail">
+      <Link to="/">
+        <i className="detail__arrow fa-solid fa-arrow-left"></i>
+      </Link>
+      <article className="detail__card">
+        <img className="detail__card__img" src={character.photo} alt={`Image of ${character.photo}`} />
+        <div className="detail__card__text">
+          <h4>{character.name}</h4>
+          <p>Species: {character.species}</p>
+          <p>Origin: {character.origin}</p>
+          <p>Number of episodes: {character.episodes}</p>
+          <p>Status: {character.status}</p>
+        </div>
+      </article>
+    </section>
+  );
 };
 
 export default CharacterDetail;

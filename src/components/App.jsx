@@ -1,8 +1,8 @@
-import { Route, Routes, useLocation, matchPath } from "react-router-dom";
+import { Route, Routes, Link, useLocation, matchPath } from "react-router-dom";
 import { useEffect, useState } from "react";
 import callToApi from "../services/api";
 import ls from "../services/localStorage";
-import logo from "../images/rick-and-morty-logo.png";
+import logo from "../images/rick-and-morty-logo.webp";
 import "../scss/App.scss";
 import CharactersList from "./CharactersList";
 import Filters from "./Filters";
@@ -42,10 +42,12 @@ function App() {
 
   return (
     <>
-      <header>
-        <img src={logo} alt="Logo Rick and Morty" />
+      <header className="header">
+        <Link to="/">
+          <img src={logo} alt="Logo Rick and Morty" />
+        </Link>
       </header>
-      <main>
+      <main className="main">
         <Routes>
           <Route
             path="/"
@@ -53,7 +55,7 @@ function App() {
               <>
                 <Filters name={nameInput} handleNameChange={handleNameChange} />
                 {filteredCharacters.length === 0 ? (
-                  `We can't find this character in any world: ${nameInput}`
+                  `We can't find ${nameInput} in The Multiverse`
                 ) : (
                   <CharactersList characters={filteredCharacters} />
                 )}

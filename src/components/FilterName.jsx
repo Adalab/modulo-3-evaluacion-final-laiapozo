@@ -1,10 +1,11 @@
+import "../scss/components/FilterName.scss";
+
 const FilterName = ({ handleNameChange, name }) => {
   return (
     <>
-      <label htmlFor="name"></label>
       <input
+        className="nameFilter"
         type="text"
-        id="name"
         value={name}
         placeholder="Search..."
         onChange={(ev) => {
