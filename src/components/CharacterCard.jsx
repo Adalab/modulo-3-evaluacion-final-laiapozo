@@ -1,16 +1,14 @@
+import { Link } from "react-router-dom";
+
 const CharacterCard = ({ characters }) => {
   return (
-    <>
-      {characters.map((character) => {
-        return (
-          <li key={character.id}>
-            <img src={character.photo} alt={`Imagen de ${character.name}`} />
-            <h5>{character.name}</h5>
-            <p>{character.species}</p>
-          </li>
-        );
-      })}
-    </>
+    <Link to={`/detail/${characters.id}`}>
+      <li>
+        <img src={characters.photo} alt={`Image of ${characters.name}`} />
+        <h5>{characters.name}</h5>
+        <p>{characters.species}</p>
+      </li>
+    </Link>
   );
 };
 

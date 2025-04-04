@@ -1,10 +1,11 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation, matchPath } from "react-router-dom";
 import { useEffect, useState } from "react";
 import callToApi from "../services/api";
 import logo from "../images/rick-and-morty-logo.png";
 import "../scss/App.scss";
 import CharactersList from "./CharactersList";
 import Filters from "./Filters";
+import CharacterDetail from "./CharacterDetail";
 
 function App() {
   const [charactersData, setCharactersData] = useState([]);
@@ -24,18 +25,41 @@ function App() {
     return character.name.toLowerCase().includes(nameInput.toLowerCase());
   });
 
+  const { pathname } = useLocation();
+  const routeData = matchPath("/detail/:id", pathname);
+  let idCharacterRoute = undefined;
+  if (routeData !== null) {
+    idCharacterRoute = routeData.params.id;
+  }
+  const characterSelected = filteredCharacters.find((character) => {
+    return character.id === parseInt(idCharacterRoute);
+  });
+
   return (
     <>
       <header>
-        <img src={logo} alt="Logo de Rick and Morty" />
+        <img src={logo} alt="Logo Rick and Morty" />
       </header>
       <main>
-        <Filters handleNameChange={handleNameChange} />
-        {filteredCharacters.length === 0 ? (
-          `No hay ningún personaje que coincida con la palabra ${nameInput}`
-        ) : (
-          <CharactersList characters={filteredCharacters} />
-        )}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters handleNameChange={handleNameChange} />
+                {filteredCharacters.length === 0 ? (
+                  `We can't find this character in any world: ${nameInput}`
+                ) : (
+                  <CharactersList characters={filteredCharacters} />
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/detail/:id"
+            element={<CharacterDetail character={characterSelected} />}
+          />
+        </Routes>
       </main>
     </>
   );

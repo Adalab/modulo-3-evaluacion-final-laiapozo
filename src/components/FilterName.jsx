@@ -5,7 +5,7 @@ const FilterName = ({ handleNameChange }) => {
       <input
         type="text"
         id="name"
-        placeholder="Buscar..."
+        placeholder="Search..."
         onChange={(ev) => {
           handleNameChange(ev.target.value);
         }}
