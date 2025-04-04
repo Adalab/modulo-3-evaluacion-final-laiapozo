@@ -1,9 +1,15 @@
 import FilterName from "./FilterName";
 
-const Filters = ({ handleNameChange }) => {
+const Filters = ({ handleNameChange, name }) => {
+  const handleEnter = (ev) => {
+    if (ev.key === "Enter") {
+      ev.preventDefault();
+    }
+  };
+
   return (
-    <form>
-      <FilterName handleNameChange={handleNameChange} />
+    <form onKeyDown={handleEnter}>
+      <FilterName handleNameChange={handleNameChange} name={name} />
     </form>
   );
 };
