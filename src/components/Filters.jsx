@@ -1,4 +1,5 @@
 import FilterName from "./FilterName";
+import PropTypes from "prop-types";
 
 const Filters = ({ handleNameChange, name }) => {
   const handleEnter = (ev) => {
@@ -12,6 +13,15 @@ const Filters = ({ handleNameChange, name }) => {
       <FilterName handleNameChange={handleNameChange} name={name} />
     </form>
   );
+};
+
+Filters.propTypes = {
+  handleNameChange: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+Filters.defaultTypes = {
+  name: "",
 };
 
 export default Filters;

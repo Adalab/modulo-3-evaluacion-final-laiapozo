@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import "../scss/components/CharacterCard.scss";
+import PropTypes from "prop-types";
 
 const CharacterCard = ({ characters }) => {
   return (
     <Link to={`/detail/${characters.id}`}>
       <li className="character">
-        <img className="character__img" src={characters.photo} alt={`Image of ${characters.name}`} />
+        <img
+          className="character__img"
+          src={characters.photo}
+          alt={`Image of ${characters.name}`}
+        />
         <div className="character__text">
           <h5>{characters.name}</h5>
           <p>{characters.species}</p>
@@ -13,6 +18,14 @@ const CharacterCard = ({ characters }) => {
       </li>
     </Link>
   );
+};
+
+CharacterCard.propTypes = {
+  characters: PropTypes.object.isRequired,
+};
+
+CharacterCard.defaultTypes = {
+  characters: {},
 };
 
 export default CharacterCard;

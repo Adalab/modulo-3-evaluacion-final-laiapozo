@@ -9,6 +9,10 @@
     background-color: #4cb5c3;
     color: white;
     border-radius: 15px;
+
+    &:hover {
+      opacity: 70%;
+    }
   }
 
   &__card {
@@ -28,12 +32,6 @@
     }
   }
 }
-
-// @media (max-width: 940px) {
-//   .detail {
-//     width: 600px;
-//   }
-// }
 
 @media (max-width: 700px) {
   .detail {
