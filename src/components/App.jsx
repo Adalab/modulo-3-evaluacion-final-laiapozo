@@ -16,6 +16,7 @@ function App() {
   const [speciesInput, setSpeciesInput] = useState(
     ls.get("Species searched", "")
   );
+  const [selected, setSelected] = useState([]);
 
   useEffect(() => {
     callToApi().then((response) => {
