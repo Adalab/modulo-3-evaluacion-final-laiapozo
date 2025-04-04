@@ -12,6 +12,10 @@ import PageNotFound from "./PageNotFound";
 function App() {
   const [charactersData, setCharactersData] = useState([]);
   const [nameInput, setNameInput] = useState(ls.get("Name searched", ""));
+  const [statusInput, setStatusInput] = useState(ls.get("Status searched", ""));
+  const [speciesInput, setSpeciesInput] = useState(
+    ls.get("Species searched", "")
+  );
 
   useEffect(() => {
     callToApi().then((response) => {
@@ -23,13 +27,42 @@ function App() {
     ls.set("Name searched", nameInput);
   }, [nameInput]);
 
+  useEffect(() => {
+    ls.set("Status searched", statusInput);
+  }, [statusInput]);
+
+  useEffect(() => {
+    ls.set("Species searched", speciesInput);
+  }, [speciesInput]);
+
   const handleNameChange = (value) => {
     setNameInput(value);
   };
 
-  const filteredCharacters = charactersData.filter((character) => {
-    return character.name.toLowerCase().includes(nameInput.toLowerCase());
-  });
+  const handleStatusChange = (value) => {
+    setStatusInput(value);
+  };
+
+  const handleSpeciesChange = (value) => {
+    setSpeciesInput(value);
+  };
+
+  const handleResetButton = () => {
+    setNameInput("");
+    setStatusInput("");
+    setSpeciesInput("");
+  };
+
+  const filteredCharacters = charactersData
+    .filter((character) => {
+      return character.name.toLowerCase().includes(nameInput.toLowerCase());
+    })
+    .filter((character) => {
+      return statusInput === "" ? true : character.status === statusInput;
+    })
+    .filter((character) => {
+      return speciesInput === "" ? true : character.species === speciesInput;
+    });
 
   const { pathname } = useLocation();
   const routeData = matchPath("/detail/:id", pathname);
@@ -54,9 +87,17 @@ function App() {
             path="/"
             element={
               <>
-                <Filters name={nameInput} handleNameChange={handleNameChange} />
+                <Filters
+                  name={nameInput}
+                  handleNameChange={handleNameChange}
+                  status={statusInput}
+                  handleStatusChange={handleStatusChange}
+                  species={speciesInput}
+                  handleSpeciesChange={handleSpeciesChange}
+                  handleResetButton={handleResetButton}
+                />
                 {filteredCharacters.length === 0 ? (
-                  `We can't find ${nameInput} in The Multiverse`
+                  `⚠️ We can't find this character in The Multiverse`
                 ) : (
                   <CharactersList characters={filteredCharacters} />
                 )}

@@ -1,0 +1,14 @@
+.btn {
+  background-color: #02adca;
+  padding: 5px 15px;
+  border: 2px solid #02adca;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:hover {
+    opacity: 70%;
+    cursor: pointer;
+  }
+}

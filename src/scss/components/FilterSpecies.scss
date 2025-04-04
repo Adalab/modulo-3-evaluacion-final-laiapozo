@@ -1,0 +1,12 @@
+.speciesFilter {
+    background-color: #ebe480;
+    padding: 5px 20px 5px 5px;
+    border: 2px solid #02adca;
+    border-radius: 5px;
+    color: #02adca;
+  
+    &:focus {
+      outline: none;
+      box-shadow: #02adca 0px 0px 4px 1px;
+    }
+  }
