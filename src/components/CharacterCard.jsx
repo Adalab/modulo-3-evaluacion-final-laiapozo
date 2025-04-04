@@ -1,13 +1,17 @@
 const CharacterCard = ({ characters }) => {
-    return (
-        <>
-            <li>
-                <img src="" alt="" />
-                <h5>Nombre</h5>
-                <p>Species</p>
-            </li>
-        </>
-    );
+  return (
+    <>
+      {characters.map((character) => {
+        return (
+          <li key={character.id}>
+            <img src={character.photo} alt={`Imagen de ${character.name}`} />
+            <h5>{character.name}</h5>
+            <p>{character.species}</p>
+          </li>
+        );
+      })}
+    </>
+  );
 };
 
 export default CharacterCard;
