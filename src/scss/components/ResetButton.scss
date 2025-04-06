@@ -6,9 +6,11 @@
   color: white;
   text-transform: uppercase;
   font-weight: bold;
+  align-self: center;
 
   &:hover {
-    opacity: 70%;
+    opacity: 60%;
+    transition: opacity 200ms linear;
     cursor: pointer;
   }
 }

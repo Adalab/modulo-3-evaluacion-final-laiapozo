@@ -11,7 +11,8 @@
     border-radius: 15px;
 
     &:hover {
-      opacity: 70%;
+      opacity: 60%;
+      transition: opacity 200ms linear;
     }
   }
 
@@ -53,6 +54,10 @@
 
       &__img {
         height: 200px;
+      }
+
+      &__text {
+        line-height: 30px;
       }
     }
   }

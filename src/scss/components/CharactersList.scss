@@ -1,7 +1,13 @@
 .charactersGallery {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 190px);
+  justify-content: center;
   gap: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
+}
+
+@media (min-width: 1300px) {
+  .charactersGallery {
+    padding-inline: 30px;
+  }
 }

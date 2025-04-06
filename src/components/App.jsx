@@ -8,6 +8,7 @@ import CharactersList from "./CharactersList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
 import PageNotFound from "./PageNotFound";
+import CharacterNotFound from "./CharacterNotFound";
 
 function App() {
   const [charactersData, setCharactersData] = useState([]);
@@ -16,7 +17,6 @@ function App() {
   const [speciesInput, setSpeciesInput] = useState(
     ls.get("Species searched", "")
   );
-  const [selected, setSelected] = useState([]);
 
   useEffect(() => {
     callToApi().then((response) => {
@@ -98,7 +98,7 @@ function App() {
                   handleResetButton={handleResetButton}
                 />
                 {filteredCharacters.length === 0 ? (
-                  `⚠️ We can't find this character in The Multiverse`
+                  <CharacterNotFound nameInput={nameInput} />
                 ) : (
                   <CharactersList characters={filteredCharacters} />
                 )}

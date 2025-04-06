@@ -2,8 +2,13 @@
   background-color: #02adca;
   color: white;
 
+  &:hover {
+    opacity: 60%;
+    transition: opacity 200ms linear;
+  }
+
   &__img {
-    width: 250px;
+    width: 190px;
   }
 
   &__text {
