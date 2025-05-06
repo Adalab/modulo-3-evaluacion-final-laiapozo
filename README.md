@@ -2,7 +2,7 @@
 
 Este proyecto es el resultado de la evaluación final del Módulo 3 del bootcamp de programación web. Se trata de una aplicación web que muestra un listado de personajes de la serie *Rick and Morty*. La app permite filtrar y acceder a información detallada de cada personaje.
 
-Puedes verlo aquí: [Rick and Morty App](http://beta.adalab.es/modulo-3-evaluacion-final-laiapozo/)
+Puedes verlo aquí: [Rick and Morty App](https://laiapozo.github.io/modulo-3-evaluacion-final-laiapozo/)
 
 ## 🚀 Arrancar el proyecto
 
