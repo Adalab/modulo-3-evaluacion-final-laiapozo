@@ -21,8 +21,4 @@ FilterName.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-FilterName.defaultTypes = {
-  name: "",
-};
-
 export default FilterName;

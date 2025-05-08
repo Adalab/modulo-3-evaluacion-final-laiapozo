@@ -25,8 +25,4 @@ FilterStatus.propTypes = {
   status: PropTypes.string.isRequired,
 };
 
-FilterStatus.defaultTypes = {
-  status: "",
-};
-
 export default FilterStatus;

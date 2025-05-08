@@ -42,10 +42,4 @@ Filters.propTypes = {
   status: PropTypes.string.isRequired,
 };
 
-Filters.defaultTypes = {
-  name: "",
-  species: "",
-  status: "",
-};
-
 export default Filters;

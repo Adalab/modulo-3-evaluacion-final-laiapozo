@@ -7,7 +7,7 @@ const CharactersList = ({ characters }) => {
     <section>
       <ul className="charactersGallery">
         {characters.map((character) => {
-          return <CharacterCard characters={character} key={character.id} />;
+          return <CharacterCard character={character} key={character.id} />;
         })}
       </ul>
     </section>
@@ -16,10 +16,6 @@ const CharactersList = ({ characters }) => {
 
 CharactersList.propTypes = {
   characters: PropTypes.array.isRequired,
-};
-
-CharactersList.defaultTypes = {
-  characters: [],
 };
 
 export default CharactersList;

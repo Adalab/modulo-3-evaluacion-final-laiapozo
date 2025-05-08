@@ -22,8 +22,4 @@ FilterSpecies.propTypes = {
   species: PropTypes.string.isRequired,
 };
 
-FilterSpecies.defaultTypes = {
-  species: "",
-};
-
 export default FilterSpecies;

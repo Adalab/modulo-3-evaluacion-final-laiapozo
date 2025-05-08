@@ -1,17 +1,5 @@
 @use "core/reset";
 
-.header {
-  background-color: #ebe480;
-  min-height: 20vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    height: 100px;
-  }
-}
-
 .main {
   background-color: #ebe480;
   padding-inline: 100px;

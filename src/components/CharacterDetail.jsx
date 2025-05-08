@@ -48,8 +48,4 @@ CharacterDetail.propTypes = {
   character: PropTypes.object.isRequired,
 };
 
-CharacterDetail.defaultTypes = {
-  character: {},
-};
-
 export default CharacterDetail;

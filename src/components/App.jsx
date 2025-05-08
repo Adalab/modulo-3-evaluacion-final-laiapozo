@@ -2,13 +2,13 @@ import { Route, Routes, Link, useLocation, matchPath } from "react-router-dom";
 import { useEffect, useState } from "react";
 import callToApi from "../services/api";
 import ls from "../services/localStorage";
-import logo from "../images/rick-and-morty-logo.png";
 import "../scss/App.scss";
 import CharactersList from "./CharactersList";
 import Filters from "./Filters";
 import CharacterDetail from "./CharacterDetail";
 import PageNotFound from "./PageNotFound";
 import CharacterNotFound from "./CharacterNotFound";
+import Header from "./Header";
 
 function App() {
   const [charactersData, setCharactersData] = useState([]);
@@ -77,11 +77,7 @@ function App() {
 
   return (
     <>
-      <header className="header">
-        <Link to="/">
-          <img src={logo} alt="Logo Rick and Morty" />
-        </Link>
-      </header>
+      <Header />
       <main className="main">
         <Routes>
           <Route
